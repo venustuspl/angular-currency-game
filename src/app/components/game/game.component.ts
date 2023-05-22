@@ -26,12 +26,13 @@ export class GameComponent implements OnInit {
   }
 
   check(value: number) {
-    if (value > this.rootObject.rates.PLN) {
+    console.log(this.rootObject.rates.USD);
+    if (value > this.rootObject.rates.USD) {
       this.result = 'podales wartość za dużą';
-    } else if (value < this.rootObject.rates.PLN) {
+    } else if (value < this.rootObject.rates.USD) {
       this.result = 'podales wartość za małą';
     } else {
-      this.result = 'udało się, gratulacje!';
+      this.result = 'udało się, gratulacje!' + value;
     }
   }
 }
