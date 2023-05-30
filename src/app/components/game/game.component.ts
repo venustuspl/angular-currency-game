@@ -8,6 +8,7 @@ import {CurrencyClientService, RootObject} from '../../services/currency-client.
 })
 export class GameComponent implements OnInit {
 
+  initMessage: string;
   messageForUser: string;
   rootObject: RootObject;
   result: string;
@@ -16,6 +17,7 @@ export class GameComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.initMessage = "Zagraj w currency-game";
     this.currencyClientService.getCurrency().subscribe(value => {
       this.rootObject = value;
     });
@@ -26,10 +28,10 @@ export class GameComponent implements OnInit {
   }
 
   check(value: number) {
-    console.log(this.rootObject.rates.USD);
-    if (value > this.rootObject.rates.USD) {
+    console.log(this.rootObject.rates.PLN);
+    if (value > this.rootObject.rates.PLN) {
       this.result = 'podales wartość za dużą';
-    } else if (value < this.rootObject.rates.USD) {
+    } else if (value < this.rootObject.rates.PLN) {
       this.result = 'podales wartość za małą';
     } else {
       this.result = 'udało się, gratulacje!' + value;
