@@ -14,7 +14,7 @@ constructor(private httpClient: HttpClient) {
     let headers = new HttpHeaders();
     const httpOptions = {
       headers: new HttpHeaders({
-        'apikey': '8bxHwArNzYJPbz6YwnbsT81mSSbFbudN'
+        'apikey': 'apiKey'
       })
     };
     return this.httpClient.get<RootObject>('https://api.apilayer.com/exchangerates_data/latest', httpOptions );
